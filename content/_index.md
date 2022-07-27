@@ -1,5 +1,5 @@
 ---
-title: "Genesys Workshop"
+title: "Landing Page"
 chapter: true
 weight: 1
 ---
