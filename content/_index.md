@@ -7,7 +7,7 @@ weight: 1
 
 ### Welcome
 
-In this short workshop you will learn how to use a more advanced feature in Genesys Bot Flows for bot authors. We will focus our attention on *dynamic slots*: what they are, use cases for using them, and give you an example of how to build a bot that uses dynamic slots. 
+In this short workshop you will learn how to use a more advanced feature in Genesys Bot Flows for bot authors. We will focus our attention on *dynamic slots*: what they are, use cases for using them, and give you an example of how to build a bot that uses Dynamic List Slots. 
 
 ### Prerequisites
 - Access to a Genesys Cloud CX org with the permissions to create Genesys Dialog Engine Bot Flows
@@ -21,4 +21,4 @@ In this short workshop you will learn how to use a more advanced feature in Gene
 - Prior experience using Genesys Dialog Engine Bot Flows
 
 ### Learning Objectives
-- Learn how to use the dynamic slots feature in Genesys Dialog Engine Bot Flows
+- Learn how to use the Dynamic List Slot feature in Genesys Dialog Engine Bot Flows
