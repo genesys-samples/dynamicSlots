@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "Use Cases for Dynamic Slots"
 chapter: true
 weight: 20
 ---
