@@ -13,5 +13,6 @@ The use case that we will build out today is going to be for disputing a transac
 We'll break this down into 3 steps: 
 
 1. Creating the data action
-2. Setting up the Dynamic List Slot
-3. Building the bot flow
+2. Building the Genesys Bot Flow - *this is the focus of our workshop* 
+3. Creating the inbound message flow
+4. Creating the Web Messenger Configuration and Deployment for Testing
