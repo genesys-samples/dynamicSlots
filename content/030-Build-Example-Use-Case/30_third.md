@@ -1,13 +1,8 @@
 ---
-title: "Building the bot flow"
+title: "Creating the Inbound Message Flow"
 chapter: false
 weight: 30
 ---
 
-## Configure Workshop
+## Creating the Inbound Messge Flow
 
-1. Step one
-
-2. Step two
-
-3. Step three
