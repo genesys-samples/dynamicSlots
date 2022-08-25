@@ -57,6 +57,11 @@ Now we need to make this transaction dispute conversational. We have the data th
   ![Expression](/images/expression.jpg)
 6. Now we can ask the customer to tell us which store they'd like to dispute the transaction with. To do this drag a Ask for Slot block under the Communicate block, but out of the loop. On the right, select the slot that we created earlier. For the question say, "Which store do you want to dispute the transaction with?"
 ![Ask for Slot](/images/askForSlot.jpg)
+7. Lastly, let's auto enable quick replies for our bot. Navigate to User Input under Settings in the right hand side, and then ensure that Automatic Quick-Reply Buttons is set to On.
+![Quick Replies](/images/quickReplies.jpg)
+8. Now just click publish and you are ready to move on to the next section! 
+
+It's important to know that this bot flow that we built is not typical in the fact that we never had an ask for intent. In our scenario, we are pretending like we've already identified that every person who gets in contact with this bot need to dispute a transaction.
 
 
 
