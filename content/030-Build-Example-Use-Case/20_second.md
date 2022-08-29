@@ -63,7 +63,7 @@ Now we need to make this transaction dispute conversational. We have the data th
 
 It's important to know that this bot flow that we built is not typical in the fact that we never had an ask for intent. In our scenario, we are pretending like we've already identified that every person who gets in contact with this bot need to dispute a transaction.
 
-If you wish to watch a video of these steps above, please navigate here
+If you wish to watch a video of these steps above, please navigate here: https://youtu.be/AbOdknMqabY
 
 
 
