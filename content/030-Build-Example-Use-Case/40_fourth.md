@@ -15,9 +15,9 @@ Within the main Genesys Cloud application, navigate to Admin > Messenger Configu
 
 While there are many configuration elements, for this workshop we will only provide a name and select our default language (by scrolling to the bottom of the appearance tab), as seen below - 
 
-![Call Bot Flow](/images/Messageconfigname.jpg)
+![Call Bot Flow](/images/Messageconfigname.PNG)
 
-![Call Bot Flow](/images/Messageconfiglanguage.jpg)
+![Call Bot Flow2](/images/messageconfiglanguage.PNG)
 
 For an explanation of the additional configuration options, you can review this resource center article - https://help.mypurecloud.com/articles/configure-messenger/
 
@@ -37,4 +37,4 @@ The deployment is where we will tie together our messenger configuration to our 
 
 After configuring these options your deployment should look as such - 
 
-![Message Deployment](/images/messagedeployment.jpg)
+![Message Deployment](/images/messagedeployment.PNG)
