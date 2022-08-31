@@ -6,7 +6,7 @@ weight: 10
 
 ### Genesys Dialog Engine Bot Flows Terminology Refresher
 
-Before we define Dynamic List slots, let's get a refresher on the terminology for Genesys Dialog Engine Bot Flows. Then we will be able to tie in how dynamic slots fits into the picture. 
+Before we define Dynamic List Slot Types, let's get a refresher on the terminology for Genesys Dialog Engine Bot Flows. Then we will be able to tie in how dynamic slots fit into the picture. 
 
 Here are some of the key terms to know with Genesys Dialog Engine Bot Flows: 
 

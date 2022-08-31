@@ -38,7 +38,7 @@ Now your flow should look like this:
 ![Create Slot](/images/createSlot.jpg)
 
 ### Building the Rest of the Bot Flow
-Now we need to make this transaction dispute conversational. We have the data that we need already from our data action and our slot's are all set up. Let's use that to guide our conversation.
+Now we need to make this transaction dispute conversational. We already have the data that we need already from our data action and our slot's are all set up. Let's use that to guide our conversation.
 1. First, we need to read off the transactions to the customer. To do this, drag a Communicate block under the Success path of the data action. Once you've added this click to configure communication on the right.
 ![Configure Communication](/images/configureCommunication.jpg)
 2. In the Communication Sequence Builder, add some text that says "We are sorry that you feel there has been fraudulent activity on your account. We will read off your most recent transactions and you can tell us which one is fraudulent."
@@ -48,11 +48,13 @@ Now we need to make this transaction dispute conversational. We have the data th
 4. Now drag another Communicate block inside of the loop and click to configure Communication.
 ![loop Communicate](/images/loopCommunicate.jpg)
 5. Now we need to have an expression that uses our loop to the transaction stores and amounts in the array and read them off in sequential order. In the Communication Sequence Builder, toggle to Expression and paste in this expression: 
-    - MakeCommunication(
+```
+MakeCommunication(
   "$", 
   ToCommunication(GetAt(Flow.transactionValues, Flow.loopIndex)), 
   "at ", 
   ToCommunication(GetAt(Flow.transactionStores, Flow.loopIndex)))
+```
 
   ![Expression](/images/expression.jpg)
 6. Now we can ask the customer to tell us which store they'd like to dispute the transaction with. To do this drag a Ask for Slot block under the Communicate block, but out of the loop. On the right, select the slot that we created earlier. For the question say, "Which store do you want to dispute the transaction with?"
