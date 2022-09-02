@@ -12,4 +12,6 @@ Dynamic slots truly open the doors to full automation within a bot. Historically
 
 **Use Case 2:** A customer is using a self service menu to order a pizza however the pizza company has run out of a specific topping. Typically this would result in a call back to the customer to inform them that its not available, however dynamic slots would allow the bot to no longer recognize that as an accepted slot and could recommend something else instead.
 
-**Use Case 3:** A customer is reaching out to a bank to dispute a charge on their account. Dynamic slots allows the bot to pull down all recent transactions and recognize them as referencable slots. The bot can read the various transactions back to the customer and allow them to say which transaction they believe is fraud. To create this without dynamic slots an administrator would have to build a complex flow to iterate through customer transactions and allow the customer to action off of them.
+**Use Case 3:** A customer is reaching out to a bank to dispute a charge on their account. Dynamic slots allows the bot to pull down all recent transactions and recognize them as referenceable slots. The bot can read the various transactions back to the customer and allow them to say which transaction they believe is fraud. To create this without dynamic slots an administrator would have to build a complex flow to iterate through customer transactions and allow the customer to action off of them.
+
+For this workshop, we are going to build out Use Case 3 in your own environment.

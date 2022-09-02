@@ -1,10 +1,10 @@
 ---
-title: "Build Example Use Case"
+title: "Build Transaction Dispute Use Case"
 chapter: true
 weight: 30
 ---
 
-## Build Example Use Case
+## Build Transaction Dispute Use Case
 
 Now the time has come to build a bot flow using a dynamic list slot. Because we can't expect everyone to have access to the same external platform to pull an array of data, we've created a mock API that will help accomplish our use case. 
 
