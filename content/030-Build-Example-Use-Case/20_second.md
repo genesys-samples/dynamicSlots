@@ -45,11 +45,19 @@ Now we need to make this transaction dispute conversational. We already have the
 ```We are sorry that you feel there has been fraudulent activity on your account. We will read off your most recent transactions and you can tell us which one is fraudulent.```
 ![Add Text](/images/addText.jpg)
 3. Now we need to loop through the array of transaction stores and amounts and read them off. To do this, add a Loop Block under that Communicate block. Be sure to give the loop index a variable name and set the Max Loop Count to a variable that counts the number of items in your Transactions.store variable array. This expression will mean the loop will only happen for the amount of stores we have pulled back in that array.
-    - The Count function will look at the number of values in our array and return the aggregated total number of items in the array. For example, we will have 3 transactions in our array; thus, the Count function will return a value of 3. 
+    - The Count function will look at the number of values in our array and return the aggregated total number of items in the array. For example, we will have 3 transactions in our array; thus, the Count function will return a value of 3.
+
+> **The expression will look like - Count(add your variable name here)**
+
 ![Loop](/images/loop.jpg)
 4. Now drag another Communicate block inside of the loop and click to configure Communication.
 ![loop Communicate](/images/loopCommunicate.jpg)
 5. Now we need to have an expression that uses our loop to get the transaction stores and amounts in the array and read them off in sequential order. In the Communication Sequence Builder, toggle to Expression and paste in this expression: 
+
+![Expression](/images/expression.jpg)
+
+##### **In the code snip below, make sure the flow variables match what you named your variables, including case sensitivity!!!**
+
 ```
 MakeCommunication(
   "$", 
@@ -68,7 +76,7 @@ MakeCommunication(
   |2 | 2| 200 | DSW |
 
 
-  ![Expression](/images/expression.jpg)
+
 6. Now we can ask the customer to tell us which store they'd like to dispute the transaction with. To do this drag an Ask for Slot block under the Communicate block, but out of the loop. On the right, select the slot that we created earlier. For the question say:
 ``` Which store do you want to dispute the transaction with?```
 ![Ask for Slot](/images/askForSlot.jpg)

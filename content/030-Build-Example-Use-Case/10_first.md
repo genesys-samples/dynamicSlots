@@ -13,12 +13,13 @@ We will need to import this data action into your instance of Genesys Cloud CX s
 1. Navigate to your Genesys Cloud CX Admin console and locate integrations
 2. Create a new integration of Web Services Data Actions type
 ![Web Services Data Actions](/images/webServicesDataActions.jpg)
-3. Give the integration a descriptive name. You do not need to worry about configuring credentials for this integration because we are just using a MOCK API that doesn't require credentials
+3. Give the integration a descriptive name. **Note:** You do not need to worry about configuring credentials for this integration because we are just using a MOCK API that doesn't require credentials
 4. Click on the Actions button under Integrations in Genesys Cloud CX Admin
 5. Navigate to this github repository and follow the steps in the ReadMe https://github.com/genesys-samples/DynamicListSlotDataAction 
 6. Click Import on the Actions page and choose the JSON file you just downloaded. Under integration category, choose the Web Services Data Action integration that we just set up
 ![Import Data Action](/images/importDataAction.jpg)
 7. After importing the data action, navigate to the test tool and click Run Action. You should get this response.
 ![Data Action Test](/images/dataActionTest.jpg)
+8. Click "Save & Publish"
 
 You are now ready to call this data action in a Genesys bot flow.
