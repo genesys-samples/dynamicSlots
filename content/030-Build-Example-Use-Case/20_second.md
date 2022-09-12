@@ -56,7 +56,7 @@ Now we need to make this transaction dispute conversational. We already have the
 
 ![Expression](/images/expression.jpg)
 
-> **In the code snip below, make sure the flow variables match what you named your variables, including case sensitivity**
+##### **In the code snip below, make sure the flow variables match what you named your variables, including case sensitivity!!!**
 
 ```
 MakeCommunication(
