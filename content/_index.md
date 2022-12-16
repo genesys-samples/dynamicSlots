@@ -1,16 +1,16 @@
 ---
-title: "Landing Page"
+title: "Página de aterrizaje"
 chapter: true
 weight: 1
 ---
 
 
-### Welcome
+### Bienvenido
 
-In this short workshop you will learn how to use a more advanced feature in Genesys Bot Flows for bot authors. We will focus our attention on *dynamic list slots*: what they are, use cases for using them, and give you an example of how to build a bot that uses Dynamic List Slots. 
+En este breve taller, aprenderá a utilizar una función más avanzada en Genesys Bot Flows para autores de bots. Centraremos nuestra atención en *ranuras de listas dinámicas - dynamic list slots*: qué son, casos de uso para usarlas y le daremos un ejemplo de cómo crear un bot que use ranuras de listas dinámicas.
 
-### Prerequisites
-- Access to a Genesys Cloud CX org with the permissions to create Genesys Dialog Engine Bot Flows
+### Prerrequisitos
+- Acceso a una organización de Genesys Cloud CX con permisos para crear flujos de bots de Genesys Dialog Engine
     - Architect > UI > View
     - Architect > Flow > Add, View, Edit, Delete
     - Language Understanding > All
@@ -18,5 +18,5 @@ In this short workshop you will learn how to use a more advanced feature in Gene
     - Language Understanding > Miner Intent > View
     - Knowledge > All
     - Analytics > Knowledge Aggregate > All
-- Prior experience using Genesys Dialog Engine Bot Flows or completion of Build a Bot workshop that can be found here: https://workshop.genesys.com/workshops/Build-a-Bot/
+- Experiencia previa en el uso de Genesys Dialog Engine Bot Flows o finalización del taller Build a Bot que se puede encontrar aquí: https://workshop.genesys.com/workshops/Build-a-Bot/
 
