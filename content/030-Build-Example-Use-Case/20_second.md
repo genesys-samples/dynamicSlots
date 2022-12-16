@@ -1,55 +1,63 @@
 ---
-title: "Creación del flujo de bot de Genesys"
+title: "Building the Genesys Bot Flow"
 chapter: false
 weight: 20
 ---
 
-## Creación del flujo de bot de Genesys - Genesys Bot Flow
-Se necesita un flujo de bot (Genesys Bot Flow) para lograr nuestro caso de uso de disputar una transacción. La razón por la que necesitamos un flujo de bot es para poder comunicarnos con el cliente a través de un motor NLU sobre qué transacción cree que es fraudulenta. Siga estos pasos para crear su flujo de bot. También hay un video que puede ver sobre estos pasos al final de esta sección si lo prefiere.
+## Building the Genesys Bot Flow
+A Genesys Bot Flow is necessary to accomplish our use case of disputing a transaction. The reason that we need a bot flow is so we can communicate back and forth with the customer via an NLU engine about which transaction they believe is fraudulent. Follow these steps to create your bot flow. There is also a video that you can watch of these steps at the end of this section if you prefer that. 
 
-### Creando un Bot Flow
+### Creating a Bot Flow
 
-1. Vaya a Genesys Cloud CX Architect y elija Bot Flows en el menú desplegable de flujos
+1. Navigate to Genesys Cloud CX Architect and choose Bot Flows from the flows drop down
 ![Bot Flow](/images/botFlow.jpg)
-    - nota: si no ve esto, asegúrese de que Genesys Bot Flows esté habilitado en su organización y que tenga permisos para verlos y editarlos.
-2. Haga clic para crear un nuevo flujo de bot. Asígnele un nombre descriptivo y, en Plantilla, elija Flujo de bot en blanco.
+    - note: if you don't see this, be sure that Genesys Bot Flows are enabled in your org and that you have permissions to view and edit them.
+2. Click to create a new bot flow. Give it a descriptive name, and under Template choose Blank Bot Flow
 ![Create Bot Flow](/images/createBotFlow.jpg)
 
-### Llamar a la acción de datos
-1. Lo primero que debemos hacer en el flujo de bot es arrastrar un bloque de acción de datos de llamada como inicio de nuestro flujo.
-2. Para Categoría, elija la integración de Acciones de datos de servicios web que configuró anteriormente
-3. En Acción de datos, elija la acción de datos que importamos anteriormente
-4. Cree variables para las Salidas de éxito de transacciones.Almacenar y transacciones.Valor 
+### Calling the Data Action
+1. The first thing we need to do in the bot flow is to drag a Call Data Action block as the start of our flow. 
+2. For Category, choose the Web Services Data Actions integration that you set up earlier
+3. Under Data Action, choose the data action that we imported earlier 
+4. Create variables for both the Success Outputs of transactions.Store and transactions.Value
 
-Ahora su flujo debería verse así:
+Now your flow should look like this:
 ![Data Action Config](/images/dataActionConfig.jpg)
 
-### Configuración de la variable de ranura de la lista dinámica
-1. Dentro del flujo del bot, en el lado izquierdo, navegue hasta Tipos de ranuras. Haga clic para agregar un nuevo tipo de ranura
-2. Asígnele un nombre descriptivo, como Lista de transacciones, y luego elija Lista dinámica como el tipo de ranura.
+### Setting up the Dynamic List Slot Variable
+1. Inside of the bot flow, on the left side, navigate to Slot Types. Click to add a new slot type
+2. Give it a descriptive name, such as Transaction List, and then choose Dynamic List as the slot type
 ![Dynamic List](/images/dynamicList.jpg)
-3. Ahora navegue la Configuración de flujo de bot
+3. Now navigate to Bot Flow Settings
 ![Bot Flow Settings](/images/botFlowSettings.jpg)
-4. En la Configuración de flujo de bot, en Tipos de ranuras dinámicss, agregue la variable que creó para las tiendas en la columna de valores.
-    - En teoría, también podría elegir el monto de la transacción como variable. En un escenario del mundo real, probablemente desee que cada transacción tenga una identificación única en caso de transacciones duplicadas.
-     - No tendremos ningún sinónimo en nuestro ejemplo.
+4. In the Bot Flow Settings, under Dynamic Slot Types, add the variable that you created for the stores under the values column.
+    - In theory, you could also choose the transaction amount as the variable. In a real world scenario, you'd probably want each transaction to have a unique ID in case of duplicate transactions.
+    - We won't have any synonyms in our example
     ![Dynamic Slot Type](/images/dynamicSlotType.jpg)
-5. Ahora navegue hasta el botón Ranuras (Slots button) en Comprensión del lenguaje natural. Haga clic para agregar una nueva ranura. Asígnele un nombre descriptivo y elija Existente como Tipo de ranura asociada. Elija el tipo de ranura de lista dinámica que acabamos de crear.
+5. Now navigate to the Slots button under Natural Language Understanding. Click to add a new slot. Give it a descriptive name and choose Existing as the Associated Slot Type. Choose the dynamic list slot type that we just created.
 ![Create Slot](/images/createSlot.jpg)
 
-### Creación del resto del flujo de bot
-Ahora tenemos que hacer que esta disputa de transacción sea conversacional. Ya tenemos los datos que necesitamos de nuestra acción de datos y nuestras ranuras están configuradas. Usemos eso para guiar nuestra conversación.
-1. Primero, necesitamos leer las transacciones al cliente. Para hacer esto, arrastre un bloque Comunicar debajo de la ruta Éxito de la acción de datos. Una vez que haya agregado esto, haga clic para configurar la comunicación a la derecha.
+### Building the Rest of the Bot Flow
+Now we need to make this transaction dispute conversational. We already have the data that we need from our data action and our slot's are all set up. Let's use that to guide our conversation.
+1. First, we need to read off the transactions to the customer. To do this, drag a Communicate block under the Success path of the data action. Once you've added this click to configure communication on the right.
 ![Configure Communication](/images/configureCommunication.jpg)
-2. En el Generador de secuencias de comunicación, agregue un texto que diga:
-```Lamentamos que sienta que ha habido actividad fraudulenta en su cuenta. Leeremos sus transacciones más recientes y podrá decirnos cuál es fraudulenta.```
+2. In the Communication Sequence Builder, add some text that says:
+```We are sorry that you feel there has been fraudulent activity on your account. We will read off your most recent transactions and you can tell us which one is fraudulent.```
 ![Add Text](/images/addText.jpg)
-3. Ahora necesitamos recorrer la matriz de tiendas de transacciones y montos y leerlos. Para hacer esto, agregue un bloque de bucle debajo de ese bloque de comunicación. Asegúrese de asignarle al índice de bucle un nombre de variable y establezca Max Loop Count en una variable que cuente la cantidad de elementos en su matriz de variables Transactions.store. Esta expresión significará que el ciclo solo ocurrirá para la cantidad de tiendas que hemos retirado en esa matriz.
-    - La función Count observará la cantidad de valores en nuestra matriz y devolverá la cantidad total agregada de elementos en la matriz. Por ejemplo, tendremos 3 transacciones en nuestra matriz; por lo tanto, la función Contar devolverá un valor de 3.
+3. Now we need to loop through the array of transaction stores and amounts and read them off. To do this, add a Loop Block under that Communicate block. Be sure to give the loop index a variable name and set the Max Loop Count to a variable that counts the number of items in your Transactions.store variable array. This expression will mean the loop will only happen for the amount of stores we have pulled back in that array.
+    - The Count function will look at the number of values in our array and return the aggregated total number of items in the array. For example, we will have 3 transactions in our array; thus, the Count function will return a value of 3.
+
+> **The expression will look like - Count(add your variable name here)**
+
 ![Loop](/images/loop.jpg)
-4. Ahora arrastre otro bloque de comunicación dentro del bucle y haga clic para configurar la comunicación.
+4. Now drag another Communicate block inside of the loop and click to configure Communication.
 ![loop Communicate](/images/loopCommunicate.jpg)
-5. Ahora necesitamos tener una expresión que use nuestro bucle para obtener las tiendas de transacciones y las cantidades en la matriz y leerlas en orden secuencial. En el Generador de secuencias de comunicación, cambie a Expresión y pegue esta expresión:
+5. Now we need to have an expression that uses our loop to get the transaction stores and amounts in the array and read them off in sequential order. In the Communication Sequence Builder, toggle to Expression and paste in this expression: 
+
+![Expression](/images/expression.jpg)
+
+##### **In the code snip below, make sure the flow variables match what you named your variables, including case sensitivity!!!**
+
 ```
 MakeCommunication(
   "$", 
@@ -57,9 +65,9 @@ MakeCommunication(
   "at ", 
   ToCommunication(GetAt(Flow.transactionStores, Flow.loopIndex)))
 ```
-  - La función GetAt encuentra un valor en una matriz en función de su posición numérica. En nuestro escenario, buscamos tanto los valores de transacción como los almacenes de transacciones y encontramos esos valores en función de la posición numérica que corresponde con el recuento de bucles. La siguiente tabla da una idea visual de nuestra función anterior. Estamos utilizando el conteo de bucles para encontrar la posición numérica y luego devolver el valor de transacción y el almacenamiento de transacciones en esa posición numérica.
-   - He aquí un ejemplo de lo que se devolvería con esta expresión con base a la siguiente tabla: "$100 en Walmart". Luego, el segundo bucle diría "$ 150 en Menards" y así sucesivamente.
-  - Tómese un segundo para revisar la expresión y asegurarse de que tenga sentido para usted.
+  - The GetAt function finds a value in an array based upon it's numeric position. In our scenario, we are looking for both the transaction values and the transaction stores and finding those values based upon the numeric position that corresponds with the loop count. The table below gives a visual into our function above. We are using the loop count to find the numeric position and then return the transaction value and the transaction store at that numeric position.
+  - Here is an example of what would be returned with this expression based on the table below: "$ 100 at Walmart". Then the second loop would read "$ 150 at Menards" and so forth.
+  - Take a second to review the expression to be sure that this makes sense to you
 
   |Loop Count | Numeric Position | Transaction Value | Transaction store |
   | --- | --- | --- | --- |
@@ -68,17 +76,17 @@ MakeCommunication(
   |2 | 2| 200 | DSW |
 
 
-  ![Expression](/images/expression.jpg)
-6. Ahora podemos pedirle al cliente que nos diga con qué tienda le gustaría disputar la transacción. Para hacer esto, arrastre un bloque Ask for Slot debajo del bloque Communicate, pero fuera del bucle. A la derecha, seleccione la ranura que creamos anteriormente. Para la pregunta especificar:
-``` ¿Con qué tienda quieres disputar la transacción?```
+
+6. Now we can ask the customer to tell us which store they'd like to dispute the transaction with. To do this drag an Ask for Slot block under the Communicate block, but out of the loop. On the right, select the slot that we created earlier. For the question say:
+``` Which store do you want to dispute the transaction with?```
 ![Ask for Slot](/images/askForSlot.jpg)
-7. Por último, habilitemos los botones de respuesta rápida automática para nuestro bot. Vaya a Entrada de usuario en Configuración en el lado izquierdo y luego asegúrese de que los Botones de respuesta rápida automática estén activados.
+7. Lastly, let's enable Automatic Quick-Reply Buttons for our bot. Navigate to User Input under Settings on the left hand side, and then ensure that Automatic Quick-Reply Buttons is set to On.
 ![Quick Replies](/images/quickReplies.jpg)
-8. ¡Ahora simplemente haga clic en publicar y estará listo para pasar a la siguiente sección!
+8. Now just click publish and you are ready to move on to the next section! 
 
-Es importante saber que este flujo de bot que construimos no es típico en el hecho de que nunca tuvimos un bloque Solicitar intención. En nuestro escenario, pretendemos que ya hemos identificado que cada persona que se pone en contacto con este bot necesita disputar una transacción.
+It's important to know that this bot flow that we built is not typical in the fact that we never had an Ask for Intent block. In our scenario, we are pretending like we've already identified that every person who gets in contact with this bot needs to dispute a transaction.
 
-Si desea ver un video de estos pasos anteriores, navegue aquí: https://youtu.be/AbOdknMqabY
+If you wish to watch a video of these steps above, please navigate here: https://youtu.be/AbOdknMqabY
 
 
 

@@ -1,24 +1,25 @@
 ---
-title: "Creación de la acción de datos"
+title: "Creating the Data Action"
 chapter: false
 weight: 10
 ---
 
-## Creación de la acción de datos
+## Creating the Data Action
 
-Para el taller, no podemos esperar que todos tengan acceso al mismo sistema de terceros para retirar nuestra lista dinámica, por lo que creamos una API simulada para que todos la usen. Esta API recuperará una lista del historial de transacciones de una persona ficticia. No especificará ninguna entrada; la acción de datos simplemente llegará al extremo de la API y devolverá el mismo historial de transacciones para cada consulta.
+For the workshop, we can't expect everyone to have access to the same third party system for pulling back our dynamic list, so we've created a mock API for everyone to use. This API will pull back a list of transaction history for a fictitious person. You will not specify any inputs; the data action will simply hit the API endpoint and return the same transaction history for each query. 
 
-Necesitaremos importar esta acción de datos a su instancia de Genesys Cloud CX para que pueda consultar el historial de transacciones en su instancia. Siga los pasos a continuación para importar la acción de datos:
+We will need to import this data action into your instance of Genesys Cloud CX so you can query the transaction history in your instance. Follow the steps below to import the data action: 
 
-1. Navegue a su consola de administración de Genesys Cloud CX y localice las integraciones
-2. Crear una nueva integración del tipo de acciones de datos de servicios web
+1. Navigate to your Genesys Cloud CX Admin console and locate integrations
+2. Create a new integration of Web Services Data Actions type
 ![Web Services Data Actions](/images/webServicesDataActions.jpg)
-3. Asigne a la integración un nombre descriptivo. No necesita preocuparse por configurar las credenciales para esta integración porque solo estamos usando una API MOCK que no requiere credenciales.
-4. Haga clic en el botón Acciones en Integraciones en Genesys Cloud CX Admin
-5. Navegue a este repositorio de github y siga los pasos en el Léame (ReadMe) https://github.com/genesys-samples/DynamicListSlotDataAction 
-6. Haga clic en Importar en la página Acciones y elija el archivo JSON que acaba de descargar. En la categoría de integración, elija la integración de Acción de datos de servicios web que acabamos de configurar
+3. Give the integration a descriptive name. **Note:** You do not need to worry about configuring credentials for this integration because we are just using a MOCK API that doesn't require credentials
+4. Click on the Actions button under Integrations in Genesys Cloud CX Admin
+5. Navigate to this github repository and follow the steps in the ReadMe https://github.com/genesys-samples/DynamicListSlotDataAction 
+6. Click Import on the Actions page and choose the JSON file you just downloaded. Under integration category, choose the Web Services Data Action integration that we just set up
 ![Import Data Action](/images/importDataAction.jpg)
-7. Después de importar la acción de datos, vaya a la herramienta de prueba y haga clic en Ejecutar acción. Debería obtener esta respuesta.
+7. After importing the data action, navigate to the test tool and click Run Action. You should get this response.
 ![Data Action Test](/images/dataActionTest.jpg)
+8. Click "Save & Publish"
 
-Ahora está listo para llamar a esta acción de datos en un flujo de bot de Genesys.
+You are now ready to call this data action in a Genesys bot flow.

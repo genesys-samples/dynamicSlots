@@ -1,17 +1,17 @@
 ---
-title: "Casos de uso para ranuras de listas dinámicas - Dynamic List Slots"
+title: "Use Cases for Dynamic List Slots"
 chapter: true
 weight: 10
 ---
 
-## Casos de uso
+## Use Cases
 
-Las ranuras dinámicas (Dynamic slots) realmente abren las puertas a la automatización completa dentro de un bot. Históricamente, un administrador tendría que modificar qué ranuras captura un bot cuando cambian las ofertas o los servicios de su organización. Las ranuras dinámicas permiten que el bot construya su lista de ranuras por interacción a partir de una fuente de datos interna o externa. Esto significa que un cliente siempre puede estar interactuando con los datos más actualizados y los administradores no los están construyendo manualmente. Aquí hay algunos ejemplos de casos de uso:
+Dynamic slots truly open the doors to full automation within a bot. Historically, an administrator would have to modify what slots a bot captures when their organization's offerings or services change. Dynamic Slots allow the bot to construct its list of slots on a per interaction basis from an internal or external data source. This means that a customer can always be interacting with the most up to date data, and administrators aren't manually constructing it. Here are a few examples of use cases: 
 
-**Case de uso 1:** Una compañía de seguros amplía sus ofertas para incluir tipos y paquetes de seguros adicionales. En lugar de que un administrador agregue estos elementos adicionales a la lista de espacios, la API que extrae los servicios actuales verá automáticamente las nuevas ofertas y las capturará como ranuras aceptadas dentro del flujo del bot.
+**Use Case 1:** An insurance company expands their offerings to include additional insurance types and packages. Instead of an administrator adding these additional items into the slot list, the API that is pulling the current services will automatically see the new offerrings and capture those as accepted slots within the bot flow.
 
-**Caso de uso 2:** Un cliente está utilizando un menú de autoservicio para ordenar una pizza, sin embargo, la compañía de pizzas se quedó sin un ingrediente específico. Por lo general, esto resultaría en una devolución de llamada al cliente para informarle que no está disponible, sin embargo, los slots (ranuras) dinámicos permitirían que el bot ya no lo reconozca como un slot aceptado y podría recomendar algo más en su lugar.
+**Use Case 2:** A customer is using a self service menu to order a pizza however the pizza company has run out of a specific topping. Typically this would result in a call back to the customer to inform them that it's not available, however dynamic slots would allow the bot to no longer recognize that as an accepted slot and could recommend something else instead.
 
-**Caso de uso 3:** Un cliente se comunica con un banco para discutir un cargo en su cuenta. Las ranuras dinámicas le permiten al bot extraer todas las transacciones recientes y reconocerlas como ranuras referenciables. El bot puede leer las diversas transacciones al cliente y permitirle decir qué transacción cree que es un fraude. Para crear esto sin ranuras dinámicas, un administrador tendría que crear un flujo complejo para iterar a través de las transacciones del cliente y permitir que el cliente actúe a partir de ellas.
+**Use Case 3:** A customer is reaching out to a bank to dispute a charge on their account. Dynamic slots allows the bot to pull down all recent transactions and recognize them as referenceable slots. The bot can read the various transactions back to the customer and allow them to say which transaction they believe is fraud. To create this without dynamic slots an administrator would have to build a complex flow to iterate through customer transactions and allow the customer to action off of them.
 
-Para este taller, desarrollaremos el Caso de uso 3 en su propio entorno.
+For this workshop, we are going to build out Use Case 3 in your own environment.

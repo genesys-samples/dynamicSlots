@@ -1,9 +1,9 @@
 ---
-title: "Conclusión"
+title: "Conclusion"
 chapter: true
 weight: 90
 ---
 
-# Conclusión
+# Conclusion
 
-¡Felicitaciones! Ha llegado al final del taller de hoy. Ahora debería comprender cómo utilizar el tipo de ranura de lista dinámica en los flujos de bot de Genesys. Si tiene alguna pregunta de seguimiento o adicional, comuníquese con nosotros a workshops@genesys.com.
+Congrats! You've reached the end of today's workshop. You should now have an understanding of how to use the Dynamic List Slot type in Genesys bot flows. If you have any follow up or additional questions, please reach out to us at workshops@genesys.com.
