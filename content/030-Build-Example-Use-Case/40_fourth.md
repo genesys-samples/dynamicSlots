@@ -1,40 +1,40 @@
 ---
-title: "Creating the Web Messenger Configuration and Deployment for Testing"
+title: "Creación de la configuración e implementación de Web Messenger para pruebas"
 chapter: false
 weight: 40
 ---
 
-## Creating the Web Messenger Configuration and Deployment for Testing
+## Creación de la configuración e implementación de Web Messenger para pruebas
 
-With the Bot and Message flow created, we're ready to create a messenger configuration and deployment. If you already have this created and you'd like to use it, feel free to simply point your Web Messenger Deployment to the architect inbound message flow we just created. 
+Con el bot y el flujo de mensajes creados, estamos listos para crear una configuración e implementación de Messenger. Si ya tiene esto creado y le gustaría usarlo, siéntase libre de simplemente apuntar su Implementación de Web Messenger al flujo de mensajes entrantes de architect que acabamos de crear.
 
-### Web Messenger Configuration
-The web messenger configuration is where we will define visibility, appearance and other various configuration elements for how the messenger will behave.
+### Cofiguración de Web Messenger 
+La configuración de web messenger es donde definiremos la visibilidad, la apariencia y otros elementos de configuración diversos sobre cómo se comportará el messenger.
 
-Within the main Genesys Cloud application, navigate to Admin > Messenger Configurations and create new.
+Dentro de la aplicación principal de Genesys Cloud, vaya a Admin > Configuraciones de Messenger y cree una nueva.
 
-While there are many configuration options, we will only provide a name and select our default language (by scrolling to the bottom of the appearance tab) for this workshop, as seen below:
+Si bien hay muchas opciones de configuración, solo proporcionaremos un nombre y seleccionaremos nuestro idioma predeterminado (desplazándonos hasta la parte inferior de la pestaña de apariencia) para este taller, como se ve a continuación:
 
 ![Call Bot Flow](/images/Messageconfigname.PNG)
 
 ![Call Bot Flow2](/images/messageconfiglanguage.PNG)
 
-For an explanation of the additional configuration options, you can review this resource center article - https://help.mypurecloud.com/articles/configure-messenger/
+Para obtener una explicación de las opciones de configuración adicionales, puede revisar este artículo del centro de recursos - https://help.mypurecloud.com/articles/configure-messenger/
 
-You can now Save new version.
+Ahora puede Guardar nueva versión.
 
-### Web Messenger Deployment
+### Despliegue de Web Messenger 
 
-Within the main Genesys Cloud application, navigate to Admin > Messenger Deployments and create new.
+Dentro de la aplicación principal de Genesys Cloud, vaya a Admin > Implementaciones de Messenger y cree una nueva.
 
-The deployment is where we will tie together our messenger configuration to our message flow (and ultimately, our bot flow).
+La implementación es donde uniremos nuestra configuración de messenger con nuestro flujo de mensajes (y, en última instancia, nuestro flujo de bot).
 
-1. Name your Configuration
-2. Enable the messenger status
-3. Select your configuration (you will search for the web messenger configuration we just created)
-4. Allow on all domains (this will simplify testing)
-5. Select your inbound message architect flow
+1. Asigne un nombre a su configuración
+2. Habilite el estado del messenger
+3. Seleccione su configuración (buscará la configuración de mensajería web que acabamos de crear)
+4. Permitir en todos los dominios (esto simplificará las pruebas)
+5. Seleccione su flujo de architect de mensajes entrantes (inbound message architect flow)
 
-After configuring these options your deployment should look as such: 
+Después de configurar estas opciones, su implementación debería verse así:
 
 ![Message Deployment](/images/messagedeployment.PNG)

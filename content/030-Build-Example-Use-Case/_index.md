@@ -1,19 +1,19 @@
 ---
-title: "Build Transaction Dispute Use Case"
+title: "Crear un caso de uso de disputa de transacción"
 chapter: true
 weight: 30
 ---
 
-## Build Transaction Dispute Use Case
+## Crear un caso de uso de disputa de transacción
 
-Now the time has come to build a bot flow using a dynamic list slot. Because we can't expect everyone to have access to the same external platform to pull an array of data, we've created a mock API that will help accomplish our use case. 
+Ahora ha llegado el momento de crear un flujo de bot utilizando una ranura de lista dinámica (dynamic list slot). Debido a que no podemos esperar que todos tengan acceso a la misma plataforma externa para extraer una serie de datos, creamos una API simulada que ayudará a lograr nuestro caso de uso.
 
-The use case that we will build out today is going to be for disputing a transaction at a bank. Think back to the 3 slots types we covered in the introduction: list, dynamic list, and regular expression. Your most recent transactions are certainly a list, but they are dynamic because they are different for each person and frequently you are adding new transactions to the list (some people more than others). So this is an opportunity to use a Dynamic List Slot type that pulls the most recent transactions through an API call and use that dynamic list as the list for the slot type. 
+El caso de uso que desarrollaremos hoy será para disputar una transacción en un banco. Piense en los 3 tipos de ranuras (slots) que cubrimos en la introducción: lista, lista dinámica y expresión regular. Sus transacciones más recientes son ciertamente una lista, pero son dinámicas porque son diferentes para cada persona y con frecuencia agrega nuevas transacciones a la lista (algunas personas más que otras). Entonces, esta es una oportunidad para usar un tipo de ranura de lista dinámica que extrae las transacciones más recientes a través de una llamada API y usa esa lista dinámica como la lista para el tipo de ranura.
 
-We'll break this down into 5 steps: 
+Lo dividiremos en 5 pasos: 
 
-1. Creating the data action
-2. Building the Genesys Bot Flow - *this is the focus of our workshop* 
-3. Creating the inbound message flow
-4. Creating the Web Messenger Configuration and Deployment for Testing
-5. Testing
+1. Crear la acción de datos
+2. Creación del flujo de bot de Genesys (Genesys Bot Flow) - *este es el enfoque de nuestro taller*
+3. Crear el flujo de mensajes entrantes (inbound message flow)
+4. Creación de la configuración e implementación de Web Messenger para pruebas
+5. Pruebas

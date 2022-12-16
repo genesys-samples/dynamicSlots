@@ -1,39 +1,39 @@
 ---
-title: "Creating the Inbound Message Flow"
+title: "Creación del flujo de mensajes entrantes"
 chapter: false
 weight: 30
 ---
 
-## Creating the Inbound Message Flow
+## Creación del flujo de mensajes entrantes - Inbound Message Flow
 
-With our bot flow constructed, we will need to configure an inbound message flow that routes customers to this bot flow.
+Con nuestro flujo de bot construido, necesitaremos configurar un flujo de mensajes entrantes que dirija a los clientes a este flujo de bot.
 
-Within architect, change the flow type to "Inbound Message"
+Dentro de architect, cambie el tipo de flujo a "Mensaje entrante"
 
 ![image](/images/messageflowselect.PNG)
 
-Select Add, and provide your flow a name and description. You can also provide an Error Event Transfer queue which will allow for gracefully processing error events and allow interactions to continue to flow to a queue in the event of a logic failure.
+Seleccione Agregar y proporcione un nombre y una descripción a su flujo. También puede proporcionar una cola de transferencia de eventos de error (Error Event Transfer queue) que permitirá procesar correctamente los eventos de error y permitir que las interacciones continúen fluyendo a una cola en caso de una falla lógica.
 
 ![Create Message Flow](/images/messageflowcreate.PNG)
 
-Within this message flow, you can process pre-bot logic, such as data action lookups. For the purpose of this workshop we will simply add a call bot flow logic block.
+Dentro de este flujo de mensajes, puede procesar la lógica previa al bot, como las búsquedas de acciones de datos. A los efectos de este taller, simplemente agregaremos un bloque lógico de flujo de bot de llamada.
 
-Within the toolbox, expand "Bot" and drag a "Call Bot Flow" box above the default disconnect block within the flow constructor.
+Dentro de la caja de herramientas, expanda "Bot" y arrastre un cuadro "Llamar flujo de bot" sobre el bloque de desconexión predeterminado dentro del constructor de flujo.
 
 ![Call Bot Flow](/images/messageflowbot.PNG)
 
-Within the Call Bot Flow options that open on the right hand side, we can select our Dynamic Slot bot flow that we just constructed. We are also able to define input and output slots.
+Dentro de las opciones de Call Bot Flow que se abren en el lado derecho, podemos seleccionar nuestro flujo de bot de ranura dinámica (Dynamic Slot bot flow) que acabamos de construir. También podemos definir ranuras de entrada y salida.
 
-  * Inputs allow us to send information we've already gathered to a bot flow, for example, if we executed a data action in the Message Flow and found an open case, we could send this case to the bot as an already filled slot. We do not need inputs for this workshop.
+  * Las entradas nos permiten enviar información que ya hemos recopilado a un flujo de bot, por ejemplo, si ejecutamos una acción de datos en el flujo de mensajes y encontramos un caso abierto, podríamos enviar este caso al bot como una ranura ya ocupada. No necesitamos insumos para este taller.
 
-  * Outputs allow us to store data that the bot has gathered from the customer to make further routing or agent script decisions. Example; the customer uses the bot to select what they're contacting us about, we can use this information to route to different queues or provide different scripts to the agents. We won't be needing outputs for this example either.
+  * Los resultados nos permiten almacenar datos que el bot ha recopilado del cliente para tomar más decisiones sobre el enrutamiento o la secuencia de comandos del agente. Ejemplo; el cliente usa el bot para seleccionar sobre qué nos está contactando, podemos usar esta información para enrutar a diferentes colas o proporcionar diferentes guiones a los agentes. Tampoco necesitaremos salidas para este ejemplo.
 
 ![Call Bot Flow Options](/images/messageflowbotoptions.PNG)
 
-The last item we will add is a transfer to ACD block. This will not be a requirement for this workshop; however, it will allow for testing future enhancements.
+El último elemento que agregaremos es una transferencia al bloque ACD. Esto no será un requisito para este taller; sin embargo, permitirá probar futuras mejoras.
 
-Within the toolbox, find "Transfer to ACD" and then drag this underneath the "Call Bot Flow" block and select your queue. You can now publish this Inbound Message Flow.
+Dentro de la caja de herramientas, busque "Transferir a ACD" y luego arrástrelo debajo del bloque "Call Bot Flow" y seleccione su cola. Ahora puede publicar este flujo de mensajes entrantes.
 
-If you are experienced with Architect, feel free to add any other logic you'd like.
+Si tiene experiencia con Architect, siéntase libre de agregar cualquier otra lógica que desee.
 
 ![Transfer to ACD](/images/messageflowacd.PNG)
