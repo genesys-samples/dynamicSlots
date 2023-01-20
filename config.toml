@@ -53,19 +53,19 @@ home = ["HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-contentDir = 'content/en'
+contentDir = 'content/en-US'
 title = "Documentation for Hugo Learn Theme"
 weight = 1
 languageName = "English"
 
 [Languages.sp]
-contentDir = 'content/sp'
+contentDir = 'content/sp-SP'
 title = "Documentación para el tema Hugo Learn"
 weight = 2
 languageName = "Español"
 
 [Languages.pt]
-contentDir = 'content/pt'
+contentDir = 'content/pt-BR'
 title = "Documentação para Hugo Learn Theme"
 weight = 3
 languageName = "Português"
